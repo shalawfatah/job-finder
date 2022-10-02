@@ -12,10 +12,11 @@ import JOB_DATA from '../store/JOB_DATA.json';
 const Map = () => {
     const map_tiles = 'https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png';
     const position = [51.505, -0.09];
+    const isBrowser = typeof window !== "undefined"
 
 
   return (
-    typeof window != 'undefined' && <MapContainer center={position} zoom={5} scrollWheelZoom={false} style={{height: "100vh", width: "100vw"}}>
+    isBrowser ? <MapContainer center={position} zoom={5} scrollWheelZoom={false} style={{height: "100vh", width: "100vw"}}>
             <TileLayer
             url={map_tiles}
             />
@@ -34,7 +35,7 @@ const Map = () => {
                         </Popup>
                         </Marker>
                 })}
-        </MapContainer>
+        </MapContainer> : 'Not defined';
   )
 }
 
