@@ -39,7 +39,7 @@ const Map = () => {
                         </Marker>
                 })}
         </MapContainer> 
-  ) : <p>Not defined</p>
+  ) : <p>Loading...</p>
 }
 
 export default Map
