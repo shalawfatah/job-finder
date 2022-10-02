@@ -35,7 +35,7 @@ const Map = () => {
                         </Popup>
                         </Marker>
                 })}
-        </MapContainer> : 'Not defined';
+        </MapContainer> : 'Not defined'
   )
 }
 
