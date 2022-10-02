@@ -15,26 +15,26 @@ const Map = () => {
 
 
   return (
-<MapContainer center={position} zoom={5} scrollWheelZoom={false} style={{height: "100vh", width: "100vw"}}>
-        <TileLayer
-        url={map_tiles}
-        />
-            {JOB_DATA?.map(item => {
-                        return <Marker 
-                        position={[item?.latitude, item?.longitude]}
-                        key={item?.id}
-                        icon = { new Icon({
-                            iconUrl: iconPath,
-                            iconSize: [60, 62],
-                            iconAnchor: [20, 32],
-                            })} 
-                        >
-                    <Popup>
-                        A pretty CSS3 popup. <br /> Easily customizable.
-                    </Popup>
-                    </Marker>
-            })}
-    </MapContainer>
+    {typeof window != 'undefined' && <MapContainer center={position} zoom={5} scrollWheelZoom={false} style={{height: "100vh", width: "100vw"}}>
+            <TileLayer
+            url={map_tiles}
+            />
+                {JOB_DATA?.map(item => {
+                            return <Marker 
+                            position={[item?.latitude, item?.longitude]}
+                            key={item?.id}
+                            icon = { new Icon({
+                                iconUrl: iconPath,
+                                iconSize: [60, 62],
+                                iconAnchor: [20, 32],
+                                })} 
+                            >
+                        <Popup>
+                            A pretty CSS3 popup. <br /> Easily customizable.
+                        </Popup>
+                        </Marker>
+                })}
+        </MapContainer>}
   )
 }
 
