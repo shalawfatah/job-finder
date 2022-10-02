@@ -15,7 +15,7 @@ const Map = () => {
 
 
   return (
-    {typeof window != 'undefined' && <MapContainer center={position} zoom={5} scrollWheelZoom={false} style={{height: "100vh", width: "100vw"}}>
+    typeof window != 'undefined' && <MapContainer center={position} zoom={5} scrollWheelZoom={false} style={{height: "100vh", width: "100vw"}}>
             <TileLayer
             url={map_tiles}
             />
@@ -34,7 +34,7 @@ const Map = () => {
                         </Popup>
                         </Marker>
                 })}
-        </MapContainer>}
+        </MapContainer>
   )
 }
 
