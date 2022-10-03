@@ -11,3 +11,5 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+export const Head = () => <title>Find Jobs Near You</title>
