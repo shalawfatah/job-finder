@@ -8,6 +8,8 @@ import { useAtom } from 'jotai';
 import { dataAtom, searchAtom } from '../store/store';
 import JOB_DATA from '../store/JOB_DATA.json';
 import Card from './Card';
+import MarkerClusterGroup from '@changey/react-leaflet-markercluster';
+import '@changey/react-leaflet-markercluster/dist/styles.min.css'; // sass
 
 const Map = () => {
     const map_tiles = 'https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png';
@@ -35,6 +37,7 @@ const Map = () => {
             <TileLayer
             url={map_tiles}
             />
+            <MarkerClusterGroup>
                 {filtered_jobs?.map(item => {
                             return <Marker 
                             position={[item?.latitude, item?.longitude]}
@@ -50,6 +53,7 @@ const Map = () => {
                                 </Popup>
                         </Marker>
                 })}
+                </MarkerClusterGroup>
         </MapContainer></div> 
   ) : <p>Loading...</p>
 }
